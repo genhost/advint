@@ -1,0 +1,14 @@
+{
+    "adventure": {
+        "show_start_message": true,
+        "pause": [0, 1, 2, 3, 4, 5],
+        "name": {
+            "length": 32,
+            "format": "Добро пожаловать в {}!"
+        },
+        "description": {
+            "length": 256,
+            "format": "{}"
+        }
+    }
+}
