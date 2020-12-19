@@ -22,20 +22,3 @@ pub fn cut_json(string: &json::JsonValue, length: &json::JsonValue) -> String {
         length.as_usize().unwrap_or(string.len()),
     )
 }
-
-pub fn fmt(src_str: &str, fmt_str: &str) -> String {
-    let src_str_vec = fmt_str.split_word_bounds().collect::<Vec<&str>>();
-    let mut end_str_vec: Vec<&str> = Vec::new();
-    let mut next = false;
-
-    for word in src_str_vec {
-        if word == "{" {
-            next = true;
-        } else if next && word == "}" {
-            end_str_vec.push(&src_str);
-        } else {
-            end_str_vec.push(&word);
-        }
-    }
-    end_str_vec.join("")
-}
